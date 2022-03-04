@@ -14,8 +14,11 @@
 //   document.getElementById('root')
 // );
 
-import store from "./store/bugs/store";
-import * as actions from "./store/bugs/actions";
+import createStore from "./store/configureStore";
+import * as actions from "./store/bugs";
+
+const store = createStore();
+
 
 store.dispatch(actions.bugAdded({description: "desc 1"}));
 store.dispatch(actions.bugAdded({description: "desc 2"}));
