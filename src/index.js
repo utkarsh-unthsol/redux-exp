@@ -14,10 +14,10 @@
 //   document.getElementById('root')
 // );
 
-import store from "./store/store";
-import * as actions from "./store/actions";
+import store from "./store/bugs/store";
+import * as actions from "./store/bugs/actions";
 
-store.dispatch(actions.bugAdded("desc 1"));
-store.dispatch(actions.bugAdded("desc 2"));
-store.dispatch(actions.bugResolved(2));
-store.dispatch(actions.bugRemoved(1))
+store.dispatch(actions.bugAdded({description: "desc 1"}));
+store.dispatch(actions.bugAdded({description: "desc 2"}));
+store.dispatch(actions.bugResolved({id: 2}));
+store.dispatch(actions.bugRemoved({id: 1}));
