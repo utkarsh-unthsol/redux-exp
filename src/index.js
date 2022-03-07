@@ -16,10 +16,15 @@
 
 import createStore from "./store/configureStore";
 import * as actions from "./store/bugs";
+import { projectAdded } from "./store/projects";
+
 
 const store = createStore();
 
 
+store.dispatch(projectAdded({description: "desc 1"}));
+store.dispatch(projectAdded({description: "desc 1"}));
+store.dispatch(projectAdded({description: "desc 1"}));
 store.dispatch(actions.bugAdded({description: "desc 1"}));
 store.dispatch(actions.bugAdded({description: "desc 2"}));
 store.dispatch(actions.bugResolved({id: 2}));

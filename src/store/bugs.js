@@ -10,7 +10,7 @@ const slice = createSlice({
       bugs.push({
         id: ++lastId,
         description: action.payload.description,
-        resolved: true,
+        resolved: false,
       });
     },
     bugRemoved: (bugs, action) => {
