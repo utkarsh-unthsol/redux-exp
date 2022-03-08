@@ -15,7 +15,7 @@
 // );
 
 import createStore from "./store/configureStore";
-import * as actions from "./store/bugs";
+import {bugAdded, bugRemoved, bugResolved, getUnrseolvedBugs} from "./store/bugs";
 import { projectAdded } from "./store/projects";
 
 
@@ -25,7 +25,9 @@ const store = createStore();
 store.dispatch(projectAdded({description: "desc 1"}));
 store.dispatch(projectAdded({description: "desc 1"}));
 store.dispatch(projectAdded({description: "desc 1"}));
-store.dispatch(actions.bugAdded({description: "desc 1"}));
-store.dispatch(actions.bugAdded({description: "desc 2"}));
-store.dispatch(actions.bugResolved({id: 2}));
-store.dispatch(actions.bugRemoved({id: 1}));
+store.dispatch(bugAdded({description: "desc 1"}));
+store.dispatch(bugAdded({description: "desc 2"}));
+store.dispatch(bugResolved({id: 2}));
+// store.dispatch(bugRemoved({id: 1}));
+
+console.log(getUnrseolvedBugs(store.getState()));
